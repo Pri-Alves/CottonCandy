@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { NaoEstaLogadoGuard } from './Shared/Guards/nao-esta-logado/nao-esta-logado.guard';
+
+const routes: Routes = [{
+  path: 'login',
+  loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+  canActivate: [NaoEstaLogadoGuard],
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
