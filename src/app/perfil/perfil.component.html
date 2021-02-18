@@ -59,11 +59,11 @@
                                         <a href="#"><img [src]="postagem.FotoUsuario" alt="" class="img-fluid rounded-circle"></a>
                                     </div>
                                     <div class="act-content">
-                                        <span class="text-small">{{ postagem.DataPostagem }}</span>
+                                        <span class="text-small">{{ postagem.DataPostagem | date }}</span>
                                         <p>
                                             {{ postagem.TextoPost}}
                                         </p>
-                                        <img [src]="postagem.Fotopost" alt="" class="img-fluid img-thumbnail">
+                                        <img [src]="postagem.FotoPost" alt="" class="img-fluid img-thumbnail">
                                     </div>
                                 </li>                              
                             </ul>
