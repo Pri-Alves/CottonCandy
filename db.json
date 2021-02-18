@@ -1,0 +1,24 @@
+{
+  "usuario": [
+    {
+      "Nome": "Aline",
+      "email": "aline@gmail.com",
+      "DataNascimento": "02/02;1980",
+      "Genero": "feminino",
+      "id": 1,
+      "Cargo": "Full stack",
+      "Cidade": "SP"
+    }
+  ],
+  "postagem": [
+    {
+      "NomeUsuario": "Aline",
+      "TextoPost": "Hoje é meu dia de sorte",
+      "id": 1,
+      "DataPOstagem": 1
+    },
+    {
+      "id": 2
+    }
+  ]
+}

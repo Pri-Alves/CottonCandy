@@ -6,11 +6,11 @@
         <div class="col-md-4 mb30">
             <div class="card">
 
-                <div class="card-content pt20 pb20 profile-header">
+                <div *ngFor="let usuario of usuarios" class="card-content pt20 pb20 profile-header">
                     <img [src]="usuario.FotoPerfil" alt="" class="img-fluid rounded-circle">
-                    <h4 class="card-title text-center mb20"> {{ usuario.nome }}</h4>
+                    <h4 class="card-title text-center mb20"> {{ usuario.Nome }}</h4>
                     <p>
-                        {{ usuario.cargo }}
+                        {{ usuario.Cargo }}
                     </p>
                     
                     <hr>
