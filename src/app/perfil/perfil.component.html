@@ -29,7 +29,8 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn follow" type="button">Seguir</button>
+                        <button *ngIf="this.exibirSeguir" (click) = "this.alternar()" class="btn follow" type="button">Seguir</button>
+                        <button *ngIf="!this.exibirSeguir" (click) = "this.alternar()" class="btn follow" type="button">Seguindo</button>
                       </div>
                     
                     <hr>
@@ -49,7 +50,8 @@
                     </ul>
 
                     <!-- Tab panes -->
-                    <div class="tab-content admin-tab-content pt30" *ngFor="let postagem of postagens">
+                    <!-- *ngFor="let postagem of postagens" -->
+                    <div class="tab-content admin-tab-content pt30" >
                         <div role="tabpanel" class="tab-pane active show">
                             <ul class="activity-list list-unstyled">
                                 <li class="clearfix">

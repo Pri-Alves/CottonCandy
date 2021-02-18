@@ -5,16 +5,28 @@ import { Injectable } from '@angular/core';
 })
 export class PerfilService {
 
-  // consultar api
-  public GetPerfilUsuario(): Array<String> {
-    let perfilUsuario = [ "nome", "email", "DataNascimento"]
-    return perfilUsuario
-  }
+  
 
-  public GetPostagem(): Array<String> {
-    let postagem = ["Postagem1", "Postagem2" ]
-    return postagem
-  }
+  
+
+  // consultar api
+  // public GetPerfilUsuario(): Array<String> {
+  //   let perfilUsuario = [ "nome", "email", "DataNascimento"]
+  //   return perfilUsuario
+  // }
+
+  // public GetPostagens(): Array<Postagem> {
+    
+  //   return this.postagens
+  // }
+
+  // public GetPostagens2(): Promise<Postagem[]> {
+    
+  //   return new Promise((resolve, reject) => {
+  //     console.log('passou por aqui')
+  //     resolve(this.postagens)
+  //   })
+  // }
 
   constructor() { }
 }

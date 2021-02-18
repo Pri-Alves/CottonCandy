@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { PerfilService } from './perfil.service';
 
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -11,13 +12,24 @@ import { PerfilService } from './perfil.service';
 export class PerfilComponent implements OnInit {
   
   perfilUsuario = []
-  postagens = []
+  listaPostagens = [
+    'Post 1',
+    'Post 2',
+    'Post 3'
+  ]
+
+  exibirSeguir: boolean = true;
+  
+  alternar(){
+    this.exibirSeguir = !this.exibirSeguir;
+  }
   
   constructor( private perfilService: PerfilService) { }
 
-  ngOnInit(): void {
-    this.perfilService.GetPerfilUsuario(),
-    this.perfilService.GetPostagem()
-  }
 
+
+  ngOnInit(): void {
+    
+
+  };
 }
