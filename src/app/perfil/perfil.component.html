@@ -1,16 +1,16 @@
 
 
-<div class="container">
+<div class="container mt-5">
 
     <div class="row">
         <div class="col-md-4 mb30">
             <div class="card">
 
                 <div class="card-content pt20 pb20 profile-header">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle">
-                    <h4 class="card-title text-center mb20">Debora Orsolon</h4>
+                    <img [src]="usuario.FotoPerfil" alt="" class="img-fluid rounded-circle">
+                    <h4 class="card-title text-center mb20"> {{ usuario.nome }}</h4>
                     <p>
-                        Front End Developer
+                        {{ usuario.cargo }}
                     </p>
                     
                     <hr>
@@ -50,20 +50,20 @@
                     </ul>
 
                     <!-- Tab panes -->
-                    <!-- *ngFor="let postagem of postagens" -->
-                    <div class="tab-content admin-tab-content pt30" >
+                    
+                    <div *ngFor="let postagem of listaPostagens" class="tab-content admin-tab-content pt30" >
                         <div role="tabpanel" class="tab-pane active show">
                             <ul class="activity-list list-unstyled">
                                 <li class="clearfix">
                                     <div class="float-left">
-                                        <a href="#"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle"></a>
+                                        <a href="#"><img [src]="postagem.FotoUsuario" alt="" class="img-fluid rounded-circle"></a>
                                     </div>
                                     <div class="act-content">
-                                        <span class="text-small">11 Min Ago</span>
+                                        <span class="text-small">{{ postagem.DataPostagem }}</span>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
+                                            {{ postagem.TextoPost}}
                                         </p>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid img-thumbnail">
+                                        <img [src]="postagem.Fotopost" alt="" class="img-fluid img-thumbnail">
                                     </div>
                                 </li>                              
                             </ul>

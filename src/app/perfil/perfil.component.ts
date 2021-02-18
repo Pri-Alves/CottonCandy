@@ -11,7 +11,7 @@ import { PerfilService } from './perfil.service';
 })
 export class PerfilComponent implements OnInit {
   
-  perfilUsuario = []
+  usuario = []
   listaPostagens = [
     'Post 1',
     'Post 2',
