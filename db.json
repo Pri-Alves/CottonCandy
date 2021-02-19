@@ -2,10 +2,11 @@
   "usuario": [
     {
       "Nome": "Aline",
-      "email": "aline@gmail.com",
+      "Email": "aline@gmail.com",
       "DataNascimento": "02/02;1980",
       "Genero": "feminino",
       "id": 1,
+      "FotoPerfil": "https://bootdey.com/img/Content/avatar/avatar6.png" ,
       "Cargo": "Full stack",
       "Cidade": "SP"
     }
@@ -14,6 +15,7 @@
     {
       "NomeUsuario": "Aline",
       "TextoPost": "Hoje é meu dia de sorte",
+      "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
       "id": 1,
       "DataPOstagem": 1
     },
