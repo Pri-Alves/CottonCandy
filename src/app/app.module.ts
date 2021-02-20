@@ -4,11 +4,11 @@ import localePt from '@angular/common/locales/pt';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './Shared/shared.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 registerLocaleData(localePt, 'pt')
 
@@ -24,7 +24,7 @@ registerLocaleData(localePt, 'pt')
     HttpClientModule,
     NgbModule,
   ],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

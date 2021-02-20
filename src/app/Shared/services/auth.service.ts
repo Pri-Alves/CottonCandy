@@ -50,7 +50,7 @@ export class AuthService {
       this.token = tokenGuardado;
       return this.token;
     }
-    return null;
+    return this.token;
   }
 
   estaLogado(): boolean {

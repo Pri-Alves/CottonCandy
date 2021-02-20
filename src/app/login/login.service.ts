@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError, timer } from 'rxjs';
-import { delay, mergeMap, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { AuthService } from '../Shared/services/auth.service';
 import { LoginResponse } from './login.interface';
@@ -10,31 +10,57 @@ import { LoginResponse } from './login.interface';
 })
 export class LoginService {
 
+  urlLogin = "http://localhost:64667/api/Login"
+
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //     Authorization: '.....Token de Autorização.....'
+  //   })
+  // }
+
   constructor(
     private authService: AuthService,
+    private http: HttpClient
   ) { }
-
+  
   logar(email: String, password: String): Observable<LoginResponse> {
-    if (email === 'vitorfgsantos@outlook.com' && password ==='123') {
-      return of({
-        usuario: {
-          nome: 'Vitor',
-          cargo: 'Farias',
-          email: 'vitorfgsantos@outlook.com',
-        },
-        token: 'aDrahabiAdGugiua16287',
-      })
-        .pipe(
-          delay(2000),
-          tap(response => {
-            this.authService.setUsuario(response.usuario);
-            this.authService.setToken(response.token)
-          })
-        );
-    }
-    
-    return timer(3000).pipe(
-      mergeMap(() => throwError('Usuário ou senha incorretos'))
+    console.log(password)
+    const resposta = this.http.post<any>(this.urlLogin, {
+      "email": email,
+      "senha": password,
+    })
+    .subscribe(
+       _response => console.log(_response.accessToken),
+      //_response => localStorage.setItem('token', JSON.stringify(_response.accessToken)),
+      _error => console.log(_error),
     );
+
+    //"Bearer " +
+    return this.http.post<any>(this.urlLogin, {
+    "email": email,
+    "senha": password,
+    });
   }
+
+  postLogin(email: String, password:String){
+    //tem que trazer o token da  Api
+    return this.http.get("http://localhost:4200/users");
+  }
+
 }
+  
+//   logar(Email: String, password: String) {
+//     if (Email === 'true' && password === 'true'){
+//     return this.http.post(this.API_URL + '/api/login', this.authService) //this.authService, this.httpOptions )
+//         .pipe(tap(LoginResponse => {
+//             this.authService.setUsuario(LoginResponse.usuario);
+//             this.authService.setToken(LoginResponse.token)
+//           })
+//         );
+//     }
+
+//     return timer(3000).pipe(
+//       mergeMap(() => throwError('Usuário ou senha incorretos'))
+//     );
+//   }
+// }

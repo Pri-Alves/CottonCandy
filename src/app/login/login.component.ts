@@ -17,11 +17,11 @@ export class LoginComponent {
     private router: Router,
   ){ }
 
-  @ViewChild('emailInput')
+  @ViewChild('EmailInput')
   emailInput!: ElementRef;
 
-  @ViewChild('passwordInput')
-  passwordInput!: ElementRef;
+  @ViewChild('SenhaInput')
+  SenhaInput!: ElementRef;
 
   email!: string;
   password!: string;
@@ -41,7 +41,7 @@ export class LoginComponent {
       }
 
       if (form.controls.password.invalid){
-        this.passwordInput.nativeElement.focus();
+        this.SenhaInput.nativeElement.focus();
         return;
       }
       return;

@@ -1,0 +1,8 @@
+{
+  "credentials": {
+    "username": "CottonCandy",
+    "password": "123",
+    "endpoint": "https://login.salesforce.com",
+    "enableCors": false
+  }
+}

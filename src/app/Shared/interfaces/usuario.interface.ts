@@ -1,5 +1,10 @@
 export interface Usuario {
-    nome: string,
-    cargo: string,
-    email: string,
+    GeneroId: number;
+    Nome: string,
+    Email: string,
+    Senha: string,
+    DataNascimento: string,
+    FotoPerfil: string,
+    Cargo: string,
+    Cidade: string,
 }
