@@ -8,26 +8,17 @@ import { LoginResponse } from './login.interface';
 @Injectable({
   providedIn: 'root'
 })
+
 export class LoginService  {
 
 
- 
-
-  urlLogin = "http://localhost:5000/api/Login"
-  // usuario = {
-  //   String email =  "",
-  //   String password: ""
-  // }
+  urlLogin = "http://localhost:64667/api/Login"
 
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-   
-    
+
   ) { }
-
-
- 
 
   logar(email: String, password: String): Observable<LoginResponse> {
     // if (email === 'vitorfgsantos@outlook.com' && password ==='123') {
@@ -61,7 +52,6 @@ export class LoginService  {
     .subscribe(
       _response => {
         console.log(_response.accessToken );
-        
         localStorage.setItem('token', "Bearer " +_response.accessToken)
 
       },
