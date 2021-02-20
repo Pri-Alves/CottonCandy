@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,12 +11,15 @@ import { Usuario } from '../interfaces/usuario.interface';
 
 export class AuthService {
 
+  urlUsuario = "http://localhost:64667/api/Usuario/"
+
   usuario!: Usuario;
   userId!: Usuario["id"];
   token!: string;
   
   constructor(
     private router: Router,
+    private http: HttpClient,
   ) { }
   
   setUserId(userId: Usuario["id"]){
@@ -23,9 +27,14 @@ export class AuthService {
     localStorage.setItem('userId', JSON.stringify(userId));
   }
   
+  getUserId(_userId: Usuario["id"], _usuario: Usuario){
+      const userIdGuardado = this.http.get(this.urlUsuario + {'id':this.userId},)
+      console.log(userIdGuardado, 'usuario guardado' )
+  }
+
   setUsuario(usuario: Usuario){
     this.usuario = usuario;
-    localStorage.setItem('usuario', JSON.stringify(usuario));
+    localStorage.setItem('usuario', JSON.stringify(this.usuario));
   }
 
   getUsuario(){

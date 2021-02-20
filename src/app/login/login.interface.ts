@@ -1,6 +1,6 @@
 import { Usuario } from '../Shared/interfaces/usuario.interface';
 
 export interface LoginResponse {
-    usuario: Usuario;
+    userId: Usuario['id'];
     token: string;
 }
