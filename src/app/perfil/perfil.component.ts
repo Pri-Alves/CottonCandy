@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PerfilService } from './perfil.service';
-import { Usuario } from './perfil.interface';
-import { Postagem } from './perfil.interface';
+import { Info } from './perfil.interface';
 
 
 @Component({
@@ -13,10 +12,12 @@ import { Postagem } from './perfil.interface';
 })
 export class PerfilComponent implements OnInit {
   
-  usuarios: Usuario [];
+  // usuario: Usuario;
 
-  listaPostagens: Postagem [];
-  
+  // listaPostagens: Postagem [];
+
+  info: Info;
+  id = "1";
 
   exibirSeguir: boolean = true;
   
@@ -30,11 +31,11 @@ export class PerfilComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-     this.perfilService.GetPostagens()
-     .subscribe(response => {
-        this.listaPostagens = response
-     });
 
-    this.perfilService.GetPerfilUsuario();
+     this.perfilService.GetUsuarioIdPerfil(this.id)
+     .subscribe(response => {
+       console.log(response)
+        this.info=response;
+     });
   };
 }

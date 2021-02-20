@@ -1,16 +1,24 @@
 
-
 <div class="container mt-5">
 
     <div class="row">
         <div class="col-md-4 mb30">
             <div class="card">
 
-                <div *ngFor="let usuario of usuarios" class="card-content pt20 pb20 profile-header">
-                    <img [src]="usuario.FotoPerfil" alt="" class="img-fluid rounded-circle">
-                    <h4 class="card-title text-center mb20"> {{ usuario.Nome }}</h4>
+                <div class="card-content pt20 pb20 profile-header">
+                    <img [src]="info.FotoPerfil" alt="" class="img-fluid rounded-circle">
+                    <h4 class="card-title text-center mb20"> {{ info.Nome }}</h4>
                     <p>
-                        {{ usuario.Cargo }}
+                        {{ info.Cargo }}
+                    </p>
+                    <p>
+                        {{ info.Email }}
+                    </p>
+                    <p>
+                        {{ info.DataNascimento }}
+                    </p>
+                    <p>
+                        {{ info.Cidade }}
                     </p>
                     
                     <hr>
@@ -51,17 +59,18 @@
 
                     <!-- Tab panes -->
                     
-                    <div *ngFor="let postagem of listaPostagens" class="tab-content admin-tab-content pt30" >
+                   
+                    <div   *ngFor="let postagem of info.Postagens" class="tab-content admin-tab-content pt30" >
                         <div role="tabpanel" class="tab-pane active show">
                             <ul class="activity-list list-unstyled">
                                 <li class="clearfix">
                                     <div class="float-left">
-                                        <a href="#"><img [src]="postagem.FotoUsuario" alt="" class="img-fluid rounded-circle"></a>
+                                        <a href="#"><img src="info.FotoPerfil" alt="" class="img-fluid rounded-circle"></a>
                                     </div>
                                     <div class="act-content">
-                                        <span class="text-small">{{ postagem.DataPostagem | date }}</span>
+                                        <span class="text-small">{{ postagem.DataPostagem }}</span>
                                         <p>
-                                            {{ postagem.TextoPost}}
+                                            {{ postagem.TextoPost }}
                                         </p>
                                         <img [src]="postagem.FotoPost" alt="" class="img-fluid img-thumbnail">
                                     </div>

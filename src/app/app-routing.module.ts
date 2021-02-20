@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
-   { path: 'perfil/:usuarioId', component: PerfilComponent },
+   { path: 'perfil/:{id}', component: PerfilComponent },
 ];
 
 @NgModule({

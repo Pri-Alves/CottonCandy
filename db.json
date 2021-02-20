@@ -1,25 +1,43 @@
 {
-  "usuario": [
+  "info": [
     {
+      "id": 1,
       "Nome": "Aline",
-      "Email": "aline@gmail.com",
-      "DataNascimento": "02/02;1980",
-      "Genero": "feminino",
-      "id": 1,
-      "FotoPerfil": "https://bootdey.com/img/Content/avatar/avatar6.png" ,
-      "Cargo": "Full stack",
-      "Cidade": "SP"
-    }
-  ],
-  "postagem": [
-    {
-      "NomeUsuario": "Aline",
-      "TextoPost": "Hoje é meu dia de sorte",
-      "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
-      "id": 1,
-      "DataPOstagem": 1
+      "DataNascimento": "02/04/1989",
+      "email": "mari@gmail.com",
+      "FotoPerfil": "https://bootdey.com/img/Content/avatar/avatar6.png",
+      "Cargo": "Back End",
+      "Cidade": "SP",
+      "Postagens": [
+        {
+          "id": 1,
+          "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
+          "TextoPost": "Hoje é meu dia de sorte",
+          "DataPostagem": 10
+        }
+      ]
     },
     {
+      "Nome": "Loren",
+      "DataNascimento": "22/09/1996",
+      "email": "loren@gmail.com",
+      "FotoPerfil": "https://bootdey.com/img/Content/avatar/avatar6.png",
+      "Cargo": "Front End",
+      "Cidade": "MG",
+      "Postagens": [
+        {
+          "id": 3,
+          "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
+          "TextoPost": "Meu primeiro dia no trabalho novo foi muito legal",
+          "DataPostagem": 11
+        },
+        {
+          "id": 4,
+          "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
+          "TextoPost": "Projeto concluido com sucesso",
+          "DataPostagem": 12
+        }
+      ],
       "id": 2
     }
   ]
