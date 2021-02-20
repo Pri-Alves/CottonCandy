@@ -1,0 +1,31 @@
+
+
+    <div class="spinner-border" role="status" *ngIf="estaCarregando">
+      <span class="sr-only">Loading...</span>
+    </div>
+  
+<!--     <div *ngIf="erroNoCarregamento">
+      <h2>Deu erro :(</h2>
+      <button (click)="carregarPostagens()"> Tentar novamente </button>
+    </div>
+  
+    <button class="btn btn-primary m-1" (click)="novaPostagem()"> Novo contato </button>
+  
+    <div *ngIf="!estaCarregando && !erroNoCarregamento"> -->
+      
+        <div class="card bg-light">
+          <div class="card-body">
+            <p>oi</p>
+          </div>
+        <div class="card-body" *ngFor="let postagem of postagens">
+          <p>{{ postagem.texto }} </p>
+     
+       
+           {{ postagem.fotoPost }}
+       
+        </div>
+   
+  
+ 
+  
+  <!-- </div> -->
