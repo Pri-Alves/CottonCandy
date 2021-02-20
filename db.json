@@ -1,0 +1,44 @@
+{
+  "info": [
+    {
+      "id": 1,
+      "Nome": "Aline",
+      "DataNascimento": "02/04/1989",
+      "email": "mari@gmail.com",
+      "FotoPerfil": "https://bootdey.com/img/Content/avatar/avatar6.png",
+      "Cargo": "Back End",
+      "Cidade": "SP",
+      "Postagens": [
+        {
+          "id": 1,
+          "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
+          "TextoPost": "Hoje é meu dia de sorte",
+          "DataPostagem": 10
+        }
+      ]
+    },
+    {
+      "Nome": "Loren",
+      "DataNascimento": "22/09/1996",
+      "email": "loren@gmail.com",
+      "FotoPerfil": "https://bootdey.com/img/Content/avatar/avatar6.png",
+      "Cargo": "Front End",
+      "Cidade": "MG",
+      "Postagens": [
+        {
+          "id": 3,
+          "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
+          "TextoPost": "Meu primeiro dia no trabalho novo foi muito legal",
+          "DataPostagem": 11
+        },
+        {
+          "id": 4,
+          "FotoPost": "https://bootdey.com/img/Content/avatar/avatar6.png",
+          "TextoPost": "Projeto concluido com sucesso",
+          "DataPostagem": 12
+        }
+      ],
+      "id": 2
+    }
+  ]
+}
