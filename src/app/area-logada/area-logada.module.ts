@@ -8,14 +8,15 @@ import { AreaLogadaComponent } from './area-logada.component';
 
 
 
+
 @NgModule({
   declarations: [
-    AreaLogadaComponent
+    AreaLogadaComponent,
     ],
   imports: [
     CommonModule,
     AreaLogadaRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class AreaLogadaModule { }
