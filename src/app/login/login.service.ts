@@ -53,7 +53,8 @@ export class LoginService  {
       _response => {
         console.log(_response.accessToken );
         // localStorage.setItem('token', "Bearer " +_response.accessToken)
-        this.authService.setToken("Bearer " +_response.accessToken)
+        this.authService.setToken("Bearer " +_response.accessToken),
+        this.authService.setUserId(_response.userId)
       },
       _error => console.log(_error),
     );
@@ -61,10 +62,9 @@ export class LoginService  {
     //return "";
     
    return this.http.post<any>(this.urlLogin, {
-    "email": email,
+    "userId": email,
     "senha": password
   });
-
 
  
     

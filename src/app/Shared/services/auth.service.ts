@@ -11,12 +11,18 @@ import { Usuario } from '../interfaces/usuario.interface';
 export class AuthService {
 
   usuario!: Usuario;
+  userId!: Usuario["id"];
   token!: string;
   
   constructor(
     private router: Router,
   ) { }
-
+  
+  setUserId(userId: Usuario["id"]){
+    this.userId = userId;
+    localStorage.setItem('userId', JSON.stringify(userId));
+  }
+  
   setUsuario(usuario: Usuario){
     this.usuario = usuario;
     localStorage.setItem('usuario', JSON.stringify(usuario));
