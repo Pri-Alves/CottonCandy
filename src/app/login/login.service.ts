@@ -52,8 +52,8 @@ export class LoginService  {
     .subscribe(
       _response => {
         console.log(_response.accessToken );
-        localStorage.setItem('token', "Bearer " +_response.accessToken)
-
+        // localStorage.setItem('token', "Bearer " +_response.accessToken)
+        this.authService.setToken("Bearer " +_response.accessToken)
       },
       _error => console.log(_error),
     );
@@ -73,9 +73,9 @@ export class LoginService  {
     // );
   }
 
-  postLogin(email: String, password:String){
-    //tem que trazer o token da  Api
-    return this.http.get("http://localhost:3000/users");
-  }
+  // postLogin(email: String, password:String){
+  //   //tem que trazer o token da  Api
+  //   return this.http.get("http://localhost:4200/api/Usuario");
+  // }
 
 }

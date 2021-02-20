@@ -48,6 +48,7 @@ export class AuthService {
     const tokenGuardado = localStorage.getItem('token');
     if (tokenGuardado){
       this.token = tokenGuardado;
+      console.log(this.token, "esta ok");
       return this.token;
     }
     console.log('tokenGuardado nulo')
