@@ -59,7 +59,12 @@ export class LoginService  {
       "senha": password
     })
     .subscribe(
-      _response => console.log(_response),
+      _response => {
+        console.log(_response.accessToken );
+        
+        localStorage.setItem('token', "Bearer " +_response.accessToken)
+
+      },
       _error => console.log(_error),
     );
 
