@@ -11,8 +11,8 @@ import { Usuario } from '../interfaces/usuario.interface';
 
 export class AuthService {
 
-  urlUsuario = "http://localhost:64667/api/Usuario/"
-
+  urlUsuario = "http://localhost:64667/api/Usuario/";
+  userIdGuardado!: any;
   usuario!: Usuario;
   userId!: Usuario["id"];
   token!: string;
@@ -22,32 +22,41 @@ export class AuthService {
     private http: HttpClient,
   ) { }
   
-  // setUserId(userId: Usuario["id"]){
-  //   this.userId = userId;
-  //   localStorage.setItem('userId', JSON.stringify(userId));
-  // }
+  setUserId(userId: Usuario["id"]){
+    this.userId = userId;
+    localStorage.setItem('userId', JSON.stringify(userId));
+  }
   
-  // getUserId(_userId: Usuario["id"], _usuario: Usuario){
-  //     const userIdGuardado = this.http.get(this.urlUsuario + {'id':this.userId},)
-  //     console.log(userIdGuardado, 'usuario guardado' )
-  // }
+  getUsuarioById(_userId: string){
+      this.http.get(this.urlUsuario + _userId)
+      .subscribe(
+        _response => {
+          this.userIdGuardado = _response
+        });
+      console.log(this.userIdGuardado, 'usuario guardado' )
+      return this.userIdGuardado
+  }
 
   setUsuario(usuario: Usuario){
     this.usuario = usuario;
     localStorage.setItem('usuario', JSON.stringify(this.usuario));
   }
 
-  getUsuario(){
-    if (this.usuario){
-      return this.usuario;
-    }
+  // getUsuario(){
+  //   if (this.usuario){
+  //     return this.usuario;
+  //   }
 
-    const usuaroiGuardado = localStorage.getItem('usuario');
-    if (usuaroiGuardado){
-      this.usuario = JSON.parse(usuaroiGuardado);
-      return this.usuario;
-    }
-    return null;
+  //   const usuaroiGuardado = localStorage.getItem('usuario');
+  //   if (usuaroiGuardado){
+  //     this.usuario = JSON.parse(usuaroiGuardado);
+  //     return this.usuario;
+  //   }
+  //   return null;
+  // }
+
+  getUsuario(){
+    return this.userIdGuardado
   }
 
   setToken(token: string){

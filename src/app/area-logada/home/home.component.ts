@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Usuario } from 'src/app/Shared/interfaces/usuario.interface';
 import { AuthService } from 'src/app/Shared/services/auth.service';
 
 
@@ -11,7 +12,7 @@ import { AuthService } from 'src/app/Shared/services/auth.service';
 
 export class HomeComponent implements OnInit {
 
-  usuario: any;
+  usuario: Usuario;
 
   constructor(
     private authService: AuthService,
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.usuario = this.authService.getUsuario();
+    var userId = 
+    this.usuario = this.authService.getUsuarioById(localStorage.getItem('userId'));
   }
 
   abrirModal(content: any){

@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from 'src/app/Shared/interceptor/auth.interceptor';
 
+import { NovaPostagemComponent } from './nova-postagem/nova-postagem.component';
 import { PostagemRoutingModule } from './postagem-routing.module';
 import { PostagemComponent } from './postagem.component';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NovaPostagemComponent } from './nova-postagem/nova-postagem.component';
 
 
 @NgModule({
@@ -21,6 +23,11 @@ import { NovaPostagemComponent } from './nova-postagem/nova-postagem.component';
   exports: [
     PostagemComponent,
     NovaPostagemComponent
-  ]
+  ],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  }]
 })
 export class PostagemModule { }

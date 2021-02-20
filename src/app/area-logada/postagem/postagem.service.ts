@@ -23,9 +23,13 @@ export class PostagemService {
     return this.http.get<Postagem>(this.API_URL + '/Postagem/' + id);
   }
 
-  criarPostagem(postagem: Postagem) {
-    return this.http.post<Postagem[]>(this.API_URL + '/Postagem', postagem);
+  criarPostagem(texto: String, fotoPost:String ) {
+     this.http.post(this.API_URL + '/Postagem', {
+    'texto': texto,
+    'fotoPost': fotoPost
+    });
   }
+  
 /* 
   updateContato(id: string, contato: Contato) {
     return this.http.put<Contato>(this.API_URL + '/contatos/' + id, contato);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { PostagemService } from '../postagem.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class NovaPostagemComponent implements OnInit {
   constructor(
     private postagemService: PostagemService,
     private router: Router,
-    private route: ActivatedRoute,) {
+    private route: ActivatedRoute,
+    ) {
     
    }
    ngOnInit() {
@@ -48,13 +50,13 @@ export class NovaPostagemComponent implements OnInit {
       return;
     }
 
-    this.criarContato();
+    //this.criarContato();
   }
 
 
-  criarContato() {
-    this.postagemService.criarPostagem(this.postagemForm.value);
-  }
+  // criarContato() {
+  //   this.postagemService.criarPostagem(this.postagemForm.value);
+  // }
 
   exibeErro(nomeControle: string) {
     if (!this.postagemForm.get(nomeControle)) {
