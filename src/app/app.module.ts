@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './Shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FalsaApiComponent } from './falsa-api/falsa-api.component';
 
 registerLocaleData(localePt, 'pt')
 
 @NgModule({
   declarations: [
     AppComponent,
+    FalsaApiComponent,
   ],
   imports: [
     BrowserModule,

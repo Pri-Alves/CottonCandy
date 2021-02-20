@@ -46,7 +46,8 @@ export class LoginComponent {
       }
       return;
     }
-    this.login();
+    var resposta  = this.login();
+    console.log(resposta)
     //console.log('email', this.email);
     //console.log('password:', this.password);
   }
@@ -63,6 +64,7 @@ export class LoginComponent {
   }
 
   onSuccessLogin(){
+    console.log()
     this.router.navigate(['home']);
   }
 
