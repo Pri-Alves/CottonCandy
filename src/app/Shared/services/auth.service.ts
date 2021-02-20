@@ -22,15 +22,15 @@ export class AuthService {
     private http: HttpClient,
   ) { }
   
-  setUserId(userId: Usuario["id"]){
-    this.userId = userId;
-    localStorage.setItem('userId', JSON.stringify(userId));
-  }
+  // setUserId(userId: Usuario["id"]){
+  //   this.userId = userId;
+  //   localStorage.setItem('userId', JSON.stringify(userId));
+  // }
   
-  getUserId(_userId: Usuario["id"], _usuario: Usuario){
-      const userIdGuardado = this.http.get(this.urlUsuario + {'id':this.userId},)
-      console.log(userIdGuardado, 'usuario guardado' )
-  }
+  // getUserId(_userId: Usuario["id"], _usuario: Usuario){
+  //     const userIdGuardado = this.http.get(this.urlUsuario + {'id':this.userId},)
+  //     console.log(userIdGuardado, 'usuario guardado' )
+  // }
 
   setUsuario(usuario: Usuario){
     this.usuario = usuario;

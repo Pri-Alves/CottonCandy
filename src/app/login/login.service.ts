@@ -54,7 +54,7 @@ export class LoginService  {
         console.log(_response.accessToken );
         // localStorage.setItem('token', "Bearer " +_response.accessToken)
         this.authService.setToken("Bearer " +_response.accessToken),
-        this.authService.setUserId(_response.userId),
+        //this.authService.setUserId(_response.userId),
         this.authService.setUsuario(_response.userId)
       },
       _error => console.log(_error),
