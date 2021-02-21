@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-home',
@@ -10,7 +11,9 @@ export class PerfilHomeComponent implements OnInit {
   
   userId: any;
 
-  constructor() { }
+  constructor(private router: Router) { 
+    
+  }
 
   ngOnInit(): void {
     console.log("ngOnInit da perfil")
@@ -22,7 +25,9 @@ export class PerfilHomeComponent implements OnInit {
       
     }
     else{
+      
       console.log(" erro no ng Init do perfil ")
+      //this.router.navigate(['login']);
     }
   }
 

@@ -22,6 +22,7 @@ export class LoginService  {
   ) { }
 
   logar(email: String, password: String): Observable<LoginResponse> {
+    console.log("entrou em logar")
     // if (email === 'vitorfgsantos@outlook.com' && password ==='123') {
     //   return of({
     //     usuario: {

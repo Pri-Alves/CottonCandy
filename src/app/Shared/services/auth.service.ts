@@ -59,22 +59,22 @@ export class AuthService {
     localStorage.setItem('usuario', JSON.stringify(this.usuario));
   }
 
-  // getUsuario(){
-  //   if (this.usuario){
-  //     return this.usuario;
-  //   }
-
-  //   const usuaroiGuardado = localStorage.getItem('usuario');
-  //   if (usuaroiGuardado){
-  //     this.usuario = JSON.parse(usuaroiGuardado);
-  //     return this.usuario;
-  //   }
-  //   return null;
-  // }
-
   getUsuario(){
-    return this.userIdGuardado
+    if (this.usuario){
+      return this.usuario;
+    }
+
+    const usuaroiGuardado = localStorage.getItem('usuario');
+    if (usuaroiGuardado){
+      this.usuario = JSON.parse(usuaroiGuardado);
+      return this.usuario;
+    }
+    return null;
   }
+
+  // getUsuario(){
+  //   return this.userIdGuardado
+  // }
 
   setToken(token: string){
     this.token = token;
@@ -94,6 +94,7 @@ export class AuthService {
       return this.token;
     }
     console.log('tokenGuardado nulo')
+    
     return 'null';
   }
 
@@ -103,9 +104,11 @@ export class AuthService {
 
   logout(){
     localStorage.clear();
+    //localStorage.removeItem('id')
     this.router.navigate(['login']);
     this.usuario = null as any;
     this.token = null as any;
+   
 
   }
 }

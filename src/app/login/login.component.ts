@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
@@ -10,7 +10,7 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
@@ -28,6 +28,10 @@ export class LoginComponent {
   estaCarregando: boolean = false;
   erroNoLogin: boolean = false;
 
+
+  ngOnInit() {
+    console.log("oninit da login")
+  }
   onSubmit(form: any) {
     this.erroNoLogin = false;
 
@@ -72,6 +76,7 @@ export class LoginComponent {
 
   onErrorLogin(){
     console.log("nao logou ;_;")
+    //this.router.navigate(['login']);
     this.erroNoLogin = true;
   }
 
