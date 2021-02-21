@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
@@ -10,12 +10,16 @@ import { LoginService } from './login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   constructor(
     private loginService: LoginService,
     private router: Router,
   ){ }
+
+  ngOnInit(): void {
+    console.log("oninit da login");
+  }
 
   @ViewChild('emailInput')
   emailInput!: ElementRef;

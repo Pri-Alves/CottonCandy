@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/Shared/services/auth.service';
 
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,7 @@ export class HomeComponent implements OnInit {
     }
     else{
       console.log(" erro no ng Init da home")
+      this.router.navigate(['login']);
     }
     // if ( this.userId === null ){
     //   console.log("nao foi setado")

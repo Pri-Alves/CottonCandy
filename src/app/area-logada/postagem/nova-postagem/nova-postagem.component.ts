@@ -27,22 +27,23 @@ export class NovaPostagemComponent implements OnInit {
    ngOnInit() {
     this.inicializarFormulario();
     console.log("ngOnInit da Nova Postagem")
-    this.userId = localStorage.getItem('userId');
-    var resposta = localStorage.getItem('usuario')
-    if(resposta !== null){
+    // this.userId = localStorage.getItem('userId');
+    // var resposta = localStorage.getItem('usuario')
+    // if(resposta !== null){
       
-      this.usuario = JSON.parse(resposta)
+    //   this.usuario = JSON.parse(resposta)
       
-    }
-    else{
-      console.log(" erro no ng Init da nova postagem")
-    }
+    // }
+    // else{
+    //   console.log(" erro no ng Init da nova postagem")
+    // }
 
   }
 
 
   inicializarFormulario() {
     //this.formBuilder = new 
+    console.log("inicializando formulario")
     this.postagemForm = this.formBuilder.group({
       texto: ['', Validators.required],
     });
@@ -72,7 +73,7 @@ export class NovaPostagemComponent implements OnInit {
 
   criarPostagem() {
     //precisa passar o texto e a foto
-    this.postagemService.criarPostagem(this.postagemForm.value);
+    //this.postagemService.criarPostagem(this.postagemForm.value);
   }
 
   exibeErro(nomeControle: string) {

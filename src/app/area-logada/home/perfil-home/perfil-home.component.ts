@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PerfilService } from '../../perfil/perfil.service';
+import { Info } from '../../perfil/perfil.interface';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-perfil-home',
   templateUrl: './perfil-home.component.html',
-  styleUrls: ['./perfil-home.component.css']
+  styleUrls: ['./perfil-home.component.css'],
+  providers: [ PerfilService ]
 })
 export class PerfilHomeComponent implements OnInit {
   usuario: any;
   
   userId: any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     console.log("ngOnInit da perfil")
@@ -26,4 +34,7 @@ export class PerfilHomeComponent implements OnInit {
     }
   }
 
+  abrirPerfil (){
+    this.router.navigate(['perfil']);
+  }
 }

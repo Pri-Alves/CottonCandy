@@ -1,31 +1,22 @@
 .header {
     text-align: center;
     padding: 0.8rem;
-    background-color: #3f51b5;
+    background-color: rgb(179, 119, 235);
+}
 
-    &__title {
-        color: #ebedf7;
-        margin: 0;
-        font-size: 2rem;
-    }
+.header__title {
+    color: #ebedf7;
+    margin: 0;
+    font-size: 2rem;
+}
 
-    .nav-bar-list{
-        background-color: #6177bb;
+.nav-bar-list li {
+    list-style: none;
+}
 
-        li {
-            display: inline;
-            text-decoration: none;
-
-            a {
-                display: inline-block;
-                color: white;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-
-            .ativado {
-                background-color: red;
-            }
-        }
-    }
+.nav-bar-list li a {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
 }

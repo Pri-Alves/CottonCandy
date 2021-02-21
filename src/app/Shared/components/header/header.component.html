@@ -1,10 +1,10 @@
 <header class='header'>
     <h1 class='header__title'> {{titulo}} </h1>
-    <ul class="nav-bar-list">
-         <li>
+    <ul class="nav-bar-list d-flex justify-content-end pr-5">
+         <li class="my-auto">
             <a routerLink="/home" routerLinkActive="ativado"> Home </a>
         </li>
-        <li>
+        <li class="my-auto">
             <button class="btn btn-dark" (click)='logout()' >Logout</button>
         </li>
     </ul>

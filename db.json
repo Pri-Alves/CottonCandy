@@ -1,17 +1,17 @@
 {
-    "Usuario": [{
-        
-        "nome": "Maria",
-        "cargo": "Desenvolvedora",
-        "email": "maria@email.com"
-    }, {
-    	"nome": "Ana",
-        "cargo": "Desenvolvedora",
-        "email": "ana@email.com"
-       
-    }],
+  "Usuario": [{
+      
+      "nome": "Maria",
+      "cargo": "Desenvolvedora",
+      "email": "maria@email.com"
+  }, {
+    "nome": "Ana",
+      "cargo": "Desenvolvedora",
+      "email": "ana@email.com"
+     
+  }],
 
-    "Login": [{
-    	"token": "4739473849384"
-    }]
+  "Login": [{
+    "token": "4739473849384"
+  }]
 }

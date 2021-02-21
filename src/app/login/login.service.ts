@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { AuthService } from '../Shared/services/auth.service';
@@ -12,16 +13,18 @@ import { LoginResponse } from './login.interface';
 export class LoginService  {
 
 
-  //urlLogin = "http://localhost:64667/api/Login" no computador da Priscilla
-  urlLogin = "http://localhost:5000/api/Login" //no computador da Amanda
+  urlLogin = "http://localhost:64667/api/Login" //no computador da Priscilla
+  //urlLogin = "http://localhost:5000/api/Login" //no computador da Amanda
 
   constructor(
     private http: HttpClient,
     private authService: AuthService,
+    private router: Router,
 
   ) { }
 
   logar(email: String, password: String): Observable<LoginResponse> {
+    console.log("entrou em logar")
     // if (email === 'vitorfgsantos@outlook.com' && password ==='123') {
     //   return of({
     //     usuario: {
@@ -62,6 +65,7 @@ export class LoginService  {
             
             console.log(_response)
             localStorage.setItem('usuario', JSON.stringify(_response))
+            this.router.navigate(['home']);
             
           }
         )

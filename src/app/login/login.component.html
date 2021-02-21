@@ -1,131 +1,133 @@
 <html>
-    <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12" id="cabecalho">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <tr>
-                                <td><img  class="img-rounded" style="width:25%" src="candy2.ico"/></td>
-                                <td><h3>Devs, sejam bem vindas!</h3></td> 
-                            </tr>
-                        </div>
-                        <div class="col-md-6">
-                                
-                                <div class="text-center">
-                                    <form #form='ngForm' (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
-                                        <tr>
-                                        <td>
-                                            <div class="p-2">
-                                                <input
-                                                    type="email" class="form-control"
-                                                    placeholder="Email" name="email"
-                                                    [(ngModel)]='email' required email
-                                                    [class.is-invalid]="exibeErro('email', form)" #emailInput>
-                                                    <div *ngIf="exibeErro('email', form)" class="invalid-feedback"> E-mail inválido </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="p-2">
-                                                <input
-                                                    type="password" class="form-control"
-                                                    placeholder="Password" name="password" 
-                                                    [(ngModel)]='password' required
-                                                    [class.is-invalid]="exibeErro('password', form)" #passwordInput>
-                                                    <div *ngIf="exibeErro('password', form)" class="invalid-feedback"> Password inválido. </div>
-                                            </div>
-                                        </td>
-                        
-                                        <p *ngIf='erroNoLogin'> 
-                                            Usuário ou Senha Inválidos
-                                        </p>
-                                        <td>
-                                            <div class="p-2">
-                                                <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="estaCarregando"> Entrar </button>
-                                            </div>
-                                        <td>
-                                        </tr>
-                                    </form>
-                        
-                                    <div *ngIf='estaCarregando' class="spinner-border" role="status">
-                                        <span class="sr-only">Loading...</span>
-                                    </div>
-                        
-                                </div>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" id="cabecalho">
+                <div class="row py-3">
+                    <div class="col-md-5 my-auto">
+                        <tr>
+                            <td><img class="img-logo-header" src="candy2.ico" /></td>
+                            <td>
+                                <h4 class="titulo-header" >Devs, sejam bem vindas!</h4>
+                            </td>
+                        </tr>
+                    </div>
+                    <div class="col-md-7 my-auto">
+
+                        <div class="text-center">
+                            <form #form='ngForm' (ngSubmit)="onSubmit(form)" class="form-signin">
+                                <tr>
+                                    <td>
+                                        <div class="p-2">
+                                            <input type="email" class="form-control" placeholder="Email" name="email"
+                                                [(ngModel)]='email' required email
+                                                [class.is-invalid]="exibeErro('email', form)" #emailInput>
+                                            <div *ngIf="exibeErro('email', form)" class="invalid-feedback"> E-mail
+                                                inválido </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="p-2">
+                                            <input type="password" class="form-control" placeholder="Password"
+                                                name="password" [(ngModel)]='password' required
+                                                [class.is-invalid]="exibeErro('password', form)" #passwordInput>
+                                            <div *ngIf="exibeErro('password', form)" class="invalid-feedback"> Password
+                                                inválido. </div>
+                                        </div>
+                                    </td>
+
+                                    <p *ngIf='erroNoLogin'>
+                                        Usuário ou Senha Inválidos
+                                    </p>
+                                    <td>
+                                        <div class="p-2">
+                                            <button class="btn btn-header btn-block" type="submit"
+                                                [disabled]="estaCarregando"> Entrar </button>
+                                        </div>
+                                    <td>
+                                </tr>
+                            </form>
+
+                            <div *ngIf='estaCarregando' class="spinner-border text-light" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        Falar sobre as devs mulheres
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <form role="form">
+        </div>
+        <div class="row px-5">
+            <div class="col-md-4 mt-5 pr-5 descritivo-area-login">
+                <h1> Vamos nos conectar? </h1>
+                <h2> Encontre amigas, colegas de trabalho, mentoras e quem mais você precisar!</h2>
+            </div>
+            <div class="col-md-8 px-5">
+                <form role="form">
+                    <div class="form-group mt-5">
+                        <h3> CADASTRO DE USUARIO </h3><br>
+                        <label for="exampleInputNome1">
+                            Nome
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputNome1" />
+                    </div>
+                    <div class="form-group">
+
+                        <label for="exampleInputEmail1">
+                            Email
+                        </label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" />
+                    </div>
+                    <div class="form-group">
+
+                        <label for="exampleInputSenha1">
+                            Senha
+                        </label>
+                        <input type="password" class="form-control" id="exampleInputSenha1" />
+                    </div>
+                    <div class="form-group">
+
+                        <label for="exampleInputGenero1">
+                            Genero
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputGenero1" />
+                    </div>
+                    <div class="form-group">
+
+                        <label for="exampleInputDataNasc">
+                            Data de Nascimento
+                        </label>
+                        <input type="date" class="form-control" id="exampleInputDataNasc1" />
+                    </div>
+                    <div class="form-group">
+
+                        <label for="exampleInputCargo">
+                            Cargo
+                        </label>
+                        <input type="text" class="form-control" id="exampleInputCargo1" />
+                    </div>
+                    <div class="form-group">
                         <div class="form-group">
-                            <h3> CADASTRO DE USUARIO </h3><br>
-                            <label for="exampleInputNome1">
-                                Nome
+
+                            <label for="exampleInputCidade1">
+                                Cidade
                             </label>
-                            <input type="text" class="form-control" id="exampleInputNome1" />
+                            <input type="text" class="form-control" id="exampleInputCidade1" />
                         </div>
-                        <div class="form-group">
-                             
-                            <label for="exampleInputEmail1">
-                                Email
-                            </label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" />
-                        </div>
-                        <div class="form-group">
-                             
-                            <label for="exampleInputSenha1">
-                                Senha
-                            </label>
-                            <input type="password" class="form-control" id="exampleInputSenha1" />
-                        </div>
-                        <div class="form-group">
-                             
-                            <label for="exampleInputGenero1">
-                                Genero
-                            </label>
-                            <input type="text" class="form-control" id="exampleInputGenero1" />
-                        </div>
-                        <div class="form-group">
-                             
-                            <label for="exampleInputDataNasc">
-                                Data de Nascimento
-                            </label>
-                            <input type="date" class="form-control" id="exampleInputDataNasc1" />
-                        </div>
-                        <div class="form-group">
-                             
-                            <label for="exampleInputCargo">
-                                Cargo
-                            </label>
-                            <input type="text" class="form-control" id="exampleInputCargo1" />
-                        </div>
-                        <div class="form-group">
-                            <div class="form-group">
-                             
-                                <label for="exampleInputCidade1">
-                                    Cidade
-                                </label>
-                                <input type="text" class="form-control" id="exampleInputCidade1" />
-                            </div>
-                            <label for="exampleInputFile">
-                                Foto do Perfil
-                            </label>
-                            <input type="file" class="form-control-file" id="exampleInputFile" />
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            Enviar
-                        </button>
-                    </form>
-                </div>
+                        <label for="exampleInputFile">
+                            Foto do Perfil
+                        </label>
+                        <input type="file" class="form-control-file" id="exampleInputFile" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Enviar
+                    </button>
+                </form>
             </div>
         </div>
+    </div>
 
-    </body>
+</body>
+
 </html>

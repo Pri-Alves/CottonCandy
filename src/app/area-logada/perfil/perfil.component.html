@@ -1,0 +1,86 @@
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col-md-4 mb30">
+            <img [src]="info.FotoPerfil" alt="" class="img-fluid">
+            
+            <div class="card">
+                <div class="card-content pt20 pb20 profile-header">
+                    <img  [src]="info.FotoPerfil" alt="" class="img-fluid rounded-circle">
+                    <h4 class="card-title text-center mb20">{{ info.Nome }}</h4>
+                    <p>
+                        {{ info.Cargo }}
+                    </p>
+                    <p>
+                        {{ info.Email }}
+                    </p>
+                    <p>
+                        {{ info.DataNascimento }}
+                    </p>
+                    <p>
+                        {{ info.Cidade }}
+                    </p>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4 mb20">
+                            <h5>947</h5>
+                            <h6 class="text-small text-muted">Seguidores</h6>
+                        </div>
+                        <div class="col-md-4 mb20">
+                            <h5>583</h5>
+                            <h6 class="text-small text-muted">Seguindo</h6>
+                        </div>
+                        <div class="col-md-4 mb20">
+                            <h5>48</h5>
+                            <h6 class="text-small text-muted">Posts</h6>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button *ngIf="this.exibirSeguir" (click) = "this.alternar()" class="btn follow" type="button">Seguir</button>
+                        <button *ngIf="!this.exibirSeguir" (click) = "this.alternar()" class="btn follow" type="button">Seguindo</button>
+                      </div>
+
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-8 mb30">
+            <div class="card publicacoes">
+                <div>
+
+                    <!-- Nav tabs -->
+                    <ul class="nav tabs-admin" role="tablist">
+                        <li role="presentation" class="nav-item"><a class="nav-link active" href="#t1" aria-controls="t1" role="tab" data-toggle="tab">Publicações</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+
+
+                    <div   *ngFor="let postagem of info.Postagens" class="tab-content admin-tab-content pt30" >
+                        <div role="tabpanel" class="tab-pane active show">
+                            <ul class="activity-list list-unstyled">
+                                <li class="clearfix">
+                                    <div class="float-left">
+                                        <a href="#"><img [src]="info.FotoPerfil" alt="" class="img-fluid rounded-circle"></a>
+                                        <h6 class="card-title text-center mb20"> {{ info.Nome }}</h6>
+                                    </div>
+                                    <div class="act-content">
+                                        <span class="text-small">{{ postagem.DataPostagem }}</span>
+                                        <p>
+                                            {{ postagem.TextoPost }}
+                                        </p>
+                                        <img [src]="postagem.FotoPost" alt="" class="img-fluid img-thumbnail">
+                                    </div>
+                                </li>                              
+                            </ul>
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,7 +1,7 @@
 <div class="card">
-    <img class="card-img-top" src="" alt="Imagem de perfil">
+    <img [src]="usuario.FotoPerfil" alt="" class="img-fluid rounded-circle">
     <div class="card-body">
       <h5 class="card-title">{{ usuario.nome }}</h5>
-      <a href="#" class="btn btn-primary">Ver meu perfil</a>
+      <button class="btn btn-primary" (click)="abrirPerfil()">Ver meu perfil</button>
     </div>
   </div>

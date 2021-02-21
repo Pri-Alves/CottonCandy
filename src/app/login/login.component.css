@@ -8,3 +8,31 @@
 #cabecalho {
     background-color: rgb(179, 119, 235);
 }
+
+.img-logo-header {
+    width: 50px;
+    margin-right: 30px;
+}
+
+.titulo-header {
+    color: #fff;
+}
+
+.btn-header {
+    border: #fff 2px solid;
+    color: #fff;
+}
+
+.form-signin input {
+    min-width: 200px;
+}
+
+.descritivo-area-login h1 {
+    color: blueviolet;
+    font-size: 5rem;
+}
+
+.descritivo-area-login h2 {
+    color: rgb(46, 11, 80);
+    font-size: 2rem;
+}

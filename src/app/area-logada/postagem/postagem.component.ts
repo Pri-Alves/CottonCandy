@@ -29,7 +29,7 @@ export class PostagemComponent implements OnInit {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
 
-    this.postagemService. getPostagens()
+    this.postagemService.getPostagens()
       .pipe(
         take(1),
         finalize(() => this.estaCarregando = false)

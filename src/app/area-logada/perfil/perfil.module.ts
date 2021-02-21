@@ -1,23 +1,20 @@
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { AuthInterceptor } from 'src/app/Shared/interceptor/auth.interceptor';
 
 import { PostagemModule } from '../postagem/postagem.module';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
-import { PerfilHomeComponent } from './perfil-home/perfil-home.component';
-
+import { PerfilRoutingModule } from './perfil-routing.module';
+import { PerfilComponent } from './perfil.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    PerfilHomeComponent
+    PerfilComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
+    PerfilRoutingModule,
     PostagemModule
   ],
   providers: [{
@@ -26,4 +23,4 @@ import { PerfilHomeComponent } from './perfil-home/perfil-home.component';
     multi: true,
   }]
 })
-export class HomeModule { }
+export class PerfilModule { }

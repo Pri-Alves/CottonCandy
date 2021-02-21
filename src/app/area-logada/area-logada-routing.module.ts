@@ -13,6 +13,9 @@ const routes: Routes = [{
   children: [{
     path:'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+  }, {
+    path:'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then(m => m.PerfilModule),
   }]
 }];
 

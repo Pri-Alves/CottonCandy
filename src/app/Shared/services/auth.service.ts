@@ -11,7 +11,7 @@ import { Usuario } from '../interfaces/usuario.interface';
 
 export class AuthService {
 
-  urlUsuario = "http://localhost:5000/api/Usuario/";
+  urlUsuario = "http://localhost:64667/api/Usuario/";
   userIdGuardado!: Usuario;
   usuario!: Usuario;
   userId!: Usuario["id"];
@@ -59,22 +59,22 @@ export class AuthService {
     localStorage.setItem('usuario', JSON.stringify(this.usuario));
   }
 
-  // getUsuario(){
-  //   if (this.usuario){
-  //     return this.usuario;
-  //   }
-
-  //   const usuaroiGuardado = localStorage.getItem('usuario');
-  //   if (usuaroiGuardado){
-  //     this.usuario = JSON.parse(usuaroiGuardado);
-  //     return this.usuario;
-  //   }
-  //   return null;
-  // }
-
   getUsuario(){
-    return this.userIdGuardado
+    if (this.usuario){
+      return this.usuario;
+    }
+
+    const usuaroiGuardado = localStorage.getItem('usuario');
+    if (usuaroiGuardado){
+      this.usuario = JSON.parse(usuaroiGuardado);
+      return this.usuario;
+    }
+    return null;
   }
+
+  // getUsuario(){
+  //   return this.userIdGuardado
+  // }
 
   setToken(token: string){
     this.token = token;
