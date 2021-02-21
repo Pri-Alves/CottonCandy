@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { AuthService } from '../Shared/services/auth.service';
@@ -18,34 +19,13 @@ export class LoginService  {
   constructor(
     private http: HttpClient,
     private authService: AuthService,
+    private router: Router
 
   ) { }
 
   logar(email: String, password: String): Observable<LoginResponse> {
     console.log("entrou em logar")
-    // if (email === 'vitorfgsantos@outlook.com' && password ==='123') {
-    //   return of({
-    //     usuario: {
-    //       nome: 'Vitor',
-    //       cargo: 'Farias',
-    //       email: 'vitorfgsantos@outlook.com',
-    //     },
-    //     token: 'aDrahabiAdGugiua16287',
-    //   })
-    //     .pipe(
-    //       delay(2000),
-    //       tap(response => {
-    //         this.authService.setUsuario(response.usuario);
-    //         this.authService.setToken(response.token)
-    //       })
-    //     );
-    // }
-
-    // this.usuario.email = email
-    // this.usuario.password = password
-
-   
-    //const resposta = this.http.post(this.urlLogin, this.usuario)
+    
 
     const resposta = this.http.post<any>(this.urlLogin, {
       "email": email,
@@ -63,17 +43,19 @@ export class LoginService  {
             
             console.log(_response)
             localStorage.setItem('usuario', JSON.stringify(_response))
-            
+            console.log("setou usuario")
+            this.router.navigate(['home']);
           }
         )
         if (resposta === null){
           console.log("nao pegou ;_;")
         }
-        else{
+        // else{
 
-          console.log(JSON.stringify(resposta))
-          localStorage.setItem('usuario', JSON.stringify(resposta))
-        }
+        //   //console.log(JSON.stringify(resposta))
+        //   //localStorage.setItem('usuario', JSON.stringify(resposta))
+          
+        // }
         
       },
       _error => console.log(_error),
@@ -88,9 +70,7 @@ export class LoginService  {
 
  
     
-    // return timer(3000).pipe(
-    //   mergeMap(() => throwError('Usuário ou senha incorretos'))
-    // );
+    
   }
 
   // postLogin(email: String, password:String){

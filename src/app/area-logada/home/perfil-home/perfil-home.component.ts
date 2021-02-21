@@ -27,7 +27,7 @@ export class PerfilHomeComponent implements OnInit {
     else{
       
       console.log(" erro no ng Init do perfil ")
-      //this.router.navigate(['login']);
+      
     }
   }
 
