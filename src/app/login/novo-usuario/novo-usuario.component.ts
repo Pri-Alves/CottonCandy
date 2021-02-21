@@ -9,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NovoUsuarioComponent implements OnInit {
 
-  UrlUsuario = "http://localhost:64667/api/Usuario"
+  //UrlUsuario = "http://localhost:64667/api/Usuario"
+  UrlUsuario = "http://localhost:5000/api/Usuario"
   usuarioForm!: FormGroup;
 
   constructor(

@@ -11,7 +11,8 @@ import { Usuario } from '../interfaces/usuario.interface';
 
 export class AuthService {
 
-  urlUsuario = "http://localhost:64667/api/Usuario/";
+  //urlUsuario = "http://localhost:64667/api/Usuario/";
+  urlUsuario = "http://localhost:5000/api/Usuario/";
   userIdGuardado!: Usuario;
   usuario!: Usuario;
   userId!: Usuario["id"];

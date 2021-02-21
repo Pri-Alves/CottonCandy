@@ -13,8 +13,8 @@ import { LoginResponse } from './login.interface';
 export class LoginService  {
 
 
-  urlLogin = "http://localhost:64667/api/Login" //no computador da Priscilla
-  //urlLogin = "http://localhost:5000/api/Login" //no computador da Amanda
+ // urlLogin = "http://localhost:64667/api/Login" //no computador da Priscilla
+  urlLogin = "http://localhost:5000/api/Login" //no computador da Amanda
 
   constructor(
     private http: HttpClient,
