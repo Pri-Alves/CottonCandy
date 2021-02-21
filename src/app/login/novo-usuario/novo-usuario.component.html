@@ -1,0 +1,63 @@
+<div class='container pt-5'>
+
+    <form [formGroup]='usuarioForm'>
+        <div class='form-group'>
+            <label for='nome'>nome</label>
+            <input type='text' class='form-control' id='nome' 
+            placeholder="Nome" formControlName='nome' 
+            [class.is-invalid]="exibeErro('nome')">
+        </div>
+
+        <div class='form-group'>
+            <label for='email'>email</label>
+            <input type='email' class='form-control' id='email' 
+            placeholder="email" formControlName='email' 
+            [class.is-invalid]="exibeErro('email')">
+        </div>
+
+        <div class='form-group'>
+            <label for="dataNascimento">dataNascimento</label>
+            <input type='text' class='form-control' id='dataNascimento' 
+            placeholder="dataNascimento" formControlName='dataNascimento'
+            [class.is-invalid]="exibeErro('dataNascimento')">
+        </div>
+
+        <div class='form-group'>
+            <label for="genero">genero</label>
+            <input type='text' class='form-control' id='genero' 
+            placeholder="genero" formControlName='genero'
+            [class.is-invalid]="exibeErro('genero')">
+        </div>
+
+        <div class='form-group'>
+            <label for="fotoPerfil">fotoPerfil</label>
+            <input type='text' class='form-control' id='fotoPerfil' 
+            placeholder="fotoPerfil" formControlName='fotoPerfil'
+            [class.is-invalid]="exibeErro('fotoPerfil')">
+        </div>
+
+        <div class='form-group'>
+            <label for="cargo">cargo</label>
+            <input type='text' class='form-control' id='cargo' 
+            placeholder="cargo" formControlName='cargo'
+            [class.is-invalid]="exibeErro('cargo')">
+        </div>
+
+        <div class='form-group'>
+            <label for="cidade">cidade</label>
+            <input type='text' class='form-control' id='cidade' 
+            placeholder="cidade" formControlName='cidade'
+            [class.is-invalid]="exibeErro('cidade')">
+        </div>
+
+        <div class='form-group'>
+            <label for="fotoCapa">fotoCapa</label>
+            <input type='fotoCapa' class='form-control' id='fotoCapa' 
+            placeholder="fotoCapa" formControlName='fotoCapa'
+            [class.is-invalid]="exibeErro('fotoCapa')">
+        </div>
+
+        <button (click)='salvarUsuario()'>Salvar</button>
+    </form>
+
+</div>

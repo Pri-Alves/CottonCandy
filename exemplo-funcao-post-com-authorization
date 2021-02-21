@@ -1,0 +1,13 @@
+createContato(contato: Contato){
+	
+
+	return this.http.post<Contato[]>(this.API_URL+'/contatos', contato,{
+	headers: {
+	Authorization: ''
+	}
+
+	}
+
+	});
+
+}

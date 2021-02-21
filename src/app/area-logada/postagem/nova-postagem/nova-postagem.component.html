@@ -1,0 +1,27 @@
+<div class="container">
+<!--     <div class="text-center" *ngIf="estaCarregando">
+      <div class="spinner-border" role="status"></div>
+    </div>
+  
+    <div *ngIf="!estaCarregando && !erroNoCarregamento"> -->
+      <form [formGroup]="postagemForm">
+        <div class="form-group">
+  
+          <textarea aria-label="Com textarea" class="form-control" id="texto"
+            placeholder="O que você está pensando?" formControlName="texto"
+            [class.is-invalid]="exibeErro('texto')"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="fotoPost">Adicionar imagem</label>
+          <input type="file" class="form-control-file" id="fotoPost"
+          formControlName="fotoPost" [class.is-invalid]="exibeErro('fotoPost')">
+        </div>
+   
+        <div class="form-group">
+        <button type="button" class="btn btn-outline-info" (click)="onSubmit()">Postar</button>      
+       </div>
+    
+      </form>
+    </div>
+
