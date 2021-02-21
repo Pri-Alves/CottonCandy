@@ -20,15 +20,16 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("ngOnInit")
+    console.log("ngOnInit da home")
     this.userId = localStorage.getItem('userId');
     var resposta = localStorage.getItem('usuario')
     if(resposta !== null){
+      
       this.usuario = JSON.parse(resposta)
-
+      
     }
     else{
-      console.log(" erro no ng Init")
+      console.log(" erro no ng Init da home")
     }
     // if ( this.userId === null ){
     //   console.log("nao foi setado")

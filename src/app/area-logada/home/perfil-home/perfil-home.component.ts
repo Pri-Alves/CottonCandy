@@ -7,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilHomeComponent implements OnInit {
   usuario: any;
+  
+  userId: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log("ngOnInit da perfil")
+    this.userId = localStorage.getItem('userId');
+    var resposta = localStorage.getItem('usuario')
+    if(resposta !== null){
+      
+      this.usuario = JSON.parse(resposta)
+      
+    }
+    else{
+      console.log(" erro no ng Init do perfil ")
+    }
   }
 
 }

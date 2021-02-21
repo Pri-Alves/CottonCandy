@@ -13,6 +13,9 @@ export class NovaPostagemComponent implements OnInit {
 
   postagemForm: FormGroup;
   formBuilder: FormBuilder;
+  usuario: any;
+  
+  userId: any;
 
   constructor(
     private postagemService: PostagemService,
@@ -23,6 +26,17 @@ export class NovaPostagemComponent implements OnInit {
    }
    ngOnInit() {
     this.inicializarFormulario();
+    console.log("ngOnInit da Nova Postagem")
+    this.userId = localStorage.getItem('userId');
+    var resposta = localStorage.getItem('usuario')
+    if(resposta !== null){
+      
+      this.usuario = JSON.parse(resposta)
+      
+    }
+    else{
+      console.log(" erro no ng Init da nova postagem")
+    }
 
   }
 

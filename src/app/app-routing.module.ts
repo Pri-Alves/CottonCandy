@@ -16,10 +16,11 @@ const routes: Routes = [{
 }, {
   path: 'postagem',
   loadChildren: () => import('./area-logada/postagem/postagem.module').then(m => m.PostagemModule)
-},{
-path: 'home', 
-  loadChildren: () => import('./area-logada/home/home.module').then(m => m.HomeModule)
-}
+},
+// {
+// path: 'home', 
+//   //loadChildren: () => import('./area-logada/home/home.module').then(m => m.HomeModule)
+// }
 ];
 
 @NgModule({
