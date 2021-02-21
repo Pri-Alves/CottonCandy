@@ -59,7 +59,7 @@ export class LoginService  {
         this.authService.setUserId(_response.userId)
         this.authService.getUsuarioById(_response.userId).subscribe(
           _response => {
-            console.log("oi gente")
+            
             console.log(_response)
             localStorage.setItem('usuario', JSON.stringify(_response))
             

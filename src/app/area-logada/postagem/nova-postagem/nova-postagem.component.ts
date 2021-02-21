@@ -42,6 +42,7 @@ export class NovaPostagemComponent implements OnInit {
 
 
   inicializarFormulario() {
+    //this.formBuilder = new 
     this.postagemForm = this.formBuilder.group({
       texto: ['', Validators.required],
     });
@@ -64,13 +65,15 @@ export class NovaPostagemComponent implements OnInit {
       return;
     }
 
-    //this.criarContato();
+    this.criarPostagem();
+
   }
 
 
-  // criarContato() {
-  //   this.postagemService.criarPostagem(this.postagemForm.value);
-  // }
+  criarPostagem() {
+    //precisa passar o texto e a foto
+    this.postagemService.criarPostagem(this.postagemForm.value);
+  }
 
   exibeErro(nomeControle: string) {
     if (!this.postagemForm.get(nomeControle)) {
