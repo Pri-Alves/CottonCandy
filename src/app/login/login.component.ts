@@ -46,8 +46,9 @@ export class LoginComponent {
       }
       return;
     }
-    var resposta  = this.login();
-    console.log(resposta)
+    //var resposta  = 
+    this.login();
+    //console.log(resposta)
     //console.log('email', this.email);
     //console.log('password:', this.password);
   }

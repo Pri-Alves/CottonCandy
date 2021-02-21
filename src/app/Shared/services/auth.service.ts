@@ -83,6 +83,7 @@ export class AuthService {
 
   getToken(){
     if (this.token){
+      console.log("tem token")
       return this.token;
     }
 
@@ -97,7 +98,7 @@ export class AuthService {
   }
 
   estaLogado(): boolean {
-   return this.getUsuario() && this.getToken() ? true : false;
+   return (this.getUsuario()!== null) && (this.getToken()!== null) ? true : false;
   }
 
   logout(){

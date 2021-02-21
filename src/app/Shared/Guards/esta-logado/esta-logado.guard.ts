@@ -20,6 +20,7 @@ export class EstaLogadoGuard implements CanActivate {
     if(estaLogado){
       return true;
     }
+    console.log("Nao está logado")
     this.router.navigate(['login']);
     return false;
   }
