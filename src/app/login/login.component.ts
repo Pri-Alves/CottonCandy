@@ -64,11 +64,13 @@ export class LoginComponent {
   }
 
   onSuccessLogin(){
-    console.log()
+    console.log("LOGOU!")
     this.router.navigate(['home']);
+    console.log("Foi?")
   }
 
   onErrorLogin(){
+    console.log("nao logou ;_;")
     this.erroNoLogin = true;
   }
 

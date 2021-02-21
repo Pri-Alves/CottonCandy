@@ -11,8 +11,8 @@ import { Usuario } from '../interfaces/usuario.interface';
 
 export class AuthService {
 
-  urlUsuario = "http://localhost:64667/api/Usuario/";
-  userIdGuardado!: any;
+  urlUsuario = "http://localhost:5000/api/Usuario/";
+  userIdGuardado!: Usuario;
   usuario!: Usuario;
   userId!: Usuario["id"];
   token!: string;
@@ -27,14 +27,31 @@ export class AuthService {
     localStorage.setItem('userId', JSON.stringify(userId));
   }
   
-  getUsuarioById(_userId: string){
-      this.http.get(this.urlUsuario + _userId)
-      .subscribe(
-        _response => {
-          this.userIdGuardado = _response
-        });
-      console.log(this.userIdGuardado, 'usuario guardado' )
-      return this.userIdGuardado
+  getUsuarioById(_userId: string) {
+      return this.http.get(this.urlUsuario + _userId)
+      // .subscribe(
+      //   _response => {
+      //     console.log("a resposta foi: ")
+      //     console.log(_response)
+      //     const resposta = _response
+      //     console.log(typeof(resposta))
+          
+      //     return resposta
+
+
+          // this.userIdGuardado.id = resposta.id
+          // if(this.userIdGuardado){
+          //   this.userIdGuardado.nome
+          //   return this.userIdGuardado
+          // }
+          // else{
+          //     return null;
+          // }
+          
+      //   }
+      // )
+      // console.log(this.userIdGuardado.nome, 'usuario guardado' )
+      // return this.userIdGuardado
   }
 
   setUsuario(usuario: Usuario){

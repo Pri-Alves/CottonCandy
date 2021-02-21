@@ -12,7 +12,8 @@ import { LoginResponse } from './login.interface';
 export class LoginService  {
 
 
-  urlLogin = "http://localhost:64667/api/Login"
+  //urlLogin = "http://localhost:64667/api/Login" no computador da Priscilla
+  urlLogin = "http://localhost:5000/api/Login" //no computador da Amanda
 
   constructor(
     private http: HttpClient,
@@ -51,12 +52,28 @@ export class LoginService  {
     })
     .subscribe(
       _response => {
-        console.log(_response.accessToken );
+        //console.log(_response.accessToken );
         // localStorage.setItem('token', "Bearer " +_response.accessToken)
         this.authService.setToken("Bearer " +_response.accessToken),
         //this.authService.setUserId(_response.userId),
         this.authService.setUserId(_response.userId)
-        this.authService.getUsuarioById(_response.userId)
+        this.authService.getUsuarioById(_response.userId).subscribe(
+          _response => {
+            console.log("oi gente")
+            console.log(_response)
+            localStorage.setItem('usuario', JSON.stringify(_response))
+            
+          }
+        )
+        if (resposta === null){
+          console.log("nao pegou ;_;")
+        }
+        else{
+
+          console.log(JSON.stringify(resposta))
+          localStorage.setItem('usuario', JSON.stringify(resposta))
+        }
+        
       },
       _error => console.log(_error),
     );

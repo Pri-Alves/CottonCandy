@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Usuario } from 'src/app/Shared/interfaces/usuario.interface';
 import { AuthService } from 'src/app/Shared/services/auth.service';
 
 
@@ -12,7 +11,8 @@ import { AuthService } from 'src/app/Shared/services/auth.service';
 
 export class HomeComponent implements OnInit {
 
-  usuario: Usuario;
+  usuario: any;
+  userId: any;
 
   constructor(
     private authService: AuthService,
@@ -20,8 +20,26 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    var userId = 
-    this.usuario = this.authService.getUsuarioById(localStorage.getItem('userId'));
+    console.log("ngOnInit")
+    this.userId = localStorage.getItem('userId');
+    var resposta = localStorage.getItem('usuario')
+    if(resposta !== null){
+      this.usuario = JSON.parse(resposta)
+
+    }
+    else{
+      console.log(" erro no ng Init")
+    }
+    // if ( this.userId === null ){
+    //   console.log("nao foi setado")
+    // }
+    // else{
+    //   console.log("setando")
+    //   this.usuario = this.authService.getUsuarioById(this.userId);
+    //   console.log(this.usuario)
+    //   console.log("setou?")
+    // }
+    
   }
 
   abrirModal(content: any){
