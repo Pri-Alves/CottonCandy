@@ -2,37 +2,37 @@
 
     <div class="row">
         <div class="col-md-4 mb30">
-            <img [src]="info.FotoPerfil" alt="" class="img-fluid">
+            <img [src]="usuario.fotoCapa" alt="" class="img-fluid">
             
-            <div class="card">
+            <div class="card text-center">
                 <div class="card-content pt20 pb20 profile-header">
-                    <img  [src]="info.FotoPerfil" alt="" class="img-fluid rounded-circle">
-                    <h4 class="card-title text-center mb20">{{ info.Nome }}</h4>
+                    <img  [src]="usuario.fotoPerfil" alt="" class="img-fluid rounded-circle">
+                    <h1 class="card-title text-center mb20">{{ usuario.nome }}</h1>
                     <p>
-                        {{ info.Cargo }}
+                        {{ usuario.cargo }}
                     </p>
                     <p>
-                        {{ info.Email }}
+                        {{ usuario.email }}
                     </p>
                     <p>
-                        {{ info.DataNascimento }}
+                        {{ usuario.dataNascimento | date: 'dd-MM-yy' }}
                     </p>
                     <p>
-                        {{ info.Cidade }}
+                        {{ usuario.cidade }}
                     </p>
 
                     <hr>
                     <div class="row">
                         <div class="col-md-4 mb20">
-                            <h5>947</h5>
+                            <h5>5</h5>
                             <h6 class="text-small text-muted">Seguidores</h6>
                         </div>
                         <div class="col-md-4 mb20">
-                            <h5>583</h5>
+                            <h5>3</h5>
                             <h6 class="text-small text-muted">Seguindo</h6>
                         </div>
                         <div class="col-md-4 mb20">
-                            <h5>48</h5>
+                            <h5>1</h5>
                             <h6 class="text-small text-muted">Posts</h6>
                         </div>
                     </div>
@@ -60,20 +60,20 @@
                     <!-- Tab panes -->
 
 
-                    <div   *ngFor="let postagem of info.Postagens" class="tab-content admin-tab-content pt30" >
+                    <div   *ngFor="let postagem of postagens" class="tab-content admin-tab-content pt30" >
                         <div role="tabpanel" class="tab-pane active show">
                             <ul class="activity-list list-unstyled">
                                 <li class="clearfix">
                                     <div class="float-left">
-                                        <a href="#"><img [src]="info.FotoPerfil" alt="" class="img-fluid rounded-circle"></a>
-                                        <h6 class="card-title text-center mb20"> {{ info.Nome }}</h6>
+                                        <a href="#"><img [src]="usuario.fotoPerfil" alt="" class="img-fluid rounded-circle"></a>
                                     </div>
                                     <div class="act-content">
-                                        <span class="text-small">{{ postagem.DataPostagem }}</span>
+                                        <p class="m-0"><b> {{ usuario.nome }} </b></p>
+                                        <span class="text-small">{{ postagem.dataPostagem | date: 'dd-MM-yy' }}</span>
                                         <p>
-                                            {{ postagem.TextoPost }}
+                                            {{ postagem.texto }}
                                         </p>
-                                        <img [src]="postagem.FotoPost" alt="" class="img-fluid img-thumbnail">
+                                        <img [src]="postagem.fotoPost" alt="" class="img-fluid img-thumbnail">
                                     </div>
                                 </li>                              
                             </ul>
