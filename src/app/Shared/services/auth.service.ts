@@ -26,6 +26,10 @@ export class AuthService {
     this.userId = userId;
     localStorage.setItem('userId', JSON.stringify(userId));
   }
+
+  getUserId(){
+    return this.userId;
+  }
   
   getUsuarioById(_userId: string) {
       return this.http.get(this.urlUsuario + _userId)
@@ -107,5 +111,9 @@ export class AuthService {
     this.usuario = null as any;
     this.token = null as any;
 
+  }
+
+  GetPerfil(id : String) {
+    return this.http.get<any>(this.urlUsuario + id + '/Perfil');
   }
 }

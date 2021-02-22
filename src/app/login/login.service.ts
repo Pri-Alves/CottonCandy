@@ -15,6 +15,7 @@ export class LoginService  {
 
   urlLogin = "http://localhost:64667/api/Login" //no computador da Priscilla
   //urlLogin = "http://localhost:5000/api/Login" //no computador da Amanda
+  urlUsuario = "http://localhost:64667/api/Usuario/";
 
   constructor(
     private http: HttpClient,
@@ -63,8 +64,19 @@ export class LoginService  {
         this.authService.getUsuarioById(_response.userId).subscribe(
           _response => {
             
-            console.log(_response)
+            // console.log(_response)
             localStorage.setItem('usuario', JSON.stringify(_response))
+
+            console.log("tentando pegar perfil da classe login");
+            this.http.get<any>(this.urlUsuario + this.authService.getUserId() + '/Perfil')
+            .subscribe(
+              _response =>{
+                console.log(_response)
+                localStorage.setItem('perfil', JSON.stringify(_response))
+              },
+              _error => console.log("não funcionou")
+            )
+
             this.router.navigate(['home']);
             
           }

@@ -39,7 +39,7 @@ body{
     flex: 1 1 auto;
     min-height: 28px;
     margin: 0;
-    font-size: .9rem;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 28px;
 
@@ -106,4 +106,5 @@ body{
 
 .follow {
     background-color: rgb(198,106,238);
+    color: #fff;
 } 

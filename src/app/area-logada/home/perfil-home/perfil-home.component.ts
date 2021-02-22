@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { PerfilService } from '../../perfil/perfil.service';
 import { Info } from '../../perfil/perfil.interface';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Shared/services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -18,6 +20,8 @@ export class PerfilHomeComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private authService: AuthService,
+    private modalService: NgbModal,
   ) { }
 
   ngOnInit(): void {
@@ -38,3 +42,4 @@ export class PerfilHomeComponent implements OnInit {
     this.router.navigate(['perfil']);
   }
 }
+
